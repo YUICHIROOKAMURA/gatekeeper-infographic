@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ゲートキーパーの考え方と関わり方｜就労移行支援スタッフ向け</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --deep-teal: #1a5c6e;
+    --mid-teal: #2a7d92;
+    --light-teal: #e8f4f8;
+    --warm-bg: #faf7f2;
+    --amber: #d97b2a;
+    --amber-light: #fef3e7;
+    --green: #2c7a52;
+    --green-light: #eaf5ed;
+    --red: #b83535;
+    --red-light: #fdeaea;
+    --slate: #334155;
+    --slate-mid: #64748b;
+    --slate-light: #f1f5f9;
+    --white: #ffffff;
+    --border: #e2e8f0;
+    --shadow: 0 2px 16px rgba(26, 92, 110, 0.09);
+    --shadow-hover: 0 8px 32px rgba(26, 92, 110, 0.16);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--warm-bg);
+    color: var(--slate);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(160deg, #0d3d4a 0%, #1a5c6e 45%, #2a7d92 100%);
+    color: white;
+    padding: 80px 24px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(24px, 5vw, 42px);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.82);
+    max-width: 560px;
+    margin: 0 auto 36px;
+    line-height: 1.9;
+  }
+  .hero-def {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    border-left: 3px solid rgba(255,255,255,0.6);
+    padding: 16px 24px;
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+    color: rgba(255,255,255,0.9);
+    max-width: 520px;
+    text-align: left;
+    margin-top: 8px;
+  }
+  .hero-def strong { color: white; display: block; margin-bottom: 4px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; opacity: 0.7; }
+  .hero-wave {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+  }
+
+  /* ===== CONTAINER ===== */
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ===== SECTION STYLES ===== */
+  .section {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--mid-teal);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: 700;
+    color: var(--deep-teal);
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .section-lead {
+    font-size: 15px;
+    color: var(--slate-mid);
+    line-height: 1.9;
+    margin-bottom: 32px;
+  }
+
+  /* ===== CONTEXT SECTION ===== */
+  .context-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  @media (max-width: 560px) {
+    .context-grid { grid-template-columns: 1fr; }
+  }
+  .context-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px 20px;
+    box-shadow: var(--shadow);
+    border-top: 3px solid var(--mid-teal);
+  }
+  .context-card .card-icon {
+    width: 40px; height: 40px;
+    background: var(--light-teal);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+    color: var(--deep-teal);
+    font-size: 18px;
+  }
+  .context-card h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--deep-teal);
+    margin-bottom: 8px;
+  }
+  .context-card p {
+    font-size: 13px;
+    color: var(--slate-mid);
+    line-height: 1.8;
+  }
+
+  .stat-highlight {
+    background: linear-gradient(135deg, var(--deep-teal), var(--mid-teal));
+    color: white;
+    border-radius: 16px;
+    padding: 28px 28px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+  .stat-number {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    color: #a8d8e4;
+  }
+  .stat-number span { font-size: 24px; }
+  .stat-text { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.8; }
+  .stat-text strong { color: white; display: block; margin-bottom: 4px; font-size: 16px; }
+
+  .insight-box {
+    background: var(--amber-light);
+    border-left: 4px solid var(--amber);
+    padding: 20px 24px;
+    border-radius: 0 12px 12px 0;
+    font-size: 14px;
+    color: var(--slate);
+    line-height: 1.9;
+  }
+  .insight-box strong { color: var(--amber); }
+
+  /* ===== 4 STEPS OVERVIEW ===== */
+  .steps-overview {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 32px;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .steps-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px dashed var(--border);
+    position: relative;
+  }
+  .step-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .step-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .step-num {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+    flex-shrink: 0;
+  }
+  .step-line {
+    width: 2px;
+    height: 40px;
+    margin-top: 4px;
+  }
+  .step-item:last-child .step-line { display: none; }
+
+  .s1 .step-num { background: #1a5c6e; }
+  .s1 .step-line { background: linear-gradient(to bottom, #1a5c6e, #2a7d92); }
+  .s2 .step-num { background: #2a7d92; }
+  .s2 .step-line { background: linear-gradient(to bottom, #2a7d92, #2c7a52); }
+  .s3 .step-num { background: #2c7a52; }
+  .s3 .step-line { background: linear-gradient(to bottom, #2c7a52, #d97b2a); }
+  .s4 .step-num { background: #d97b2a; }
+
+  .step-content h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .step-content p {
+    font-size: 13px;
+    color: var(--slate-mid);
+    line-height: 1.8;
+  }
+  .step-tag {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    letter-spacing: 1px;
+  }
+  .tag-teal { background: var(--light-teal); color: var(--deep-teal); }
+  .tag-green { background: var(--green-light); color: var(--green); }
+  .tag-amber { background: var(--amber-light); color: var(--amber); }
+
+  /* ===== SIGN ACCORDION ===== */
+  .signs-section { background: white; border-radius: 20px; box-shadow: var(--shadow); overflow: hidden; }
+  .signs-header {
+    background: var(--deep-teal);
+    color: white;
+    padding: 24px 28px;
+  }
+  .signs-header h3 { font-family: 'Noto Serif JP', serif; font-size: 18px; margin-bottom: 6px; }
+  .signs-header p { font-size: 13px; color: rgba(255,255,255,0.8); }
+
+  .sign-group {
+    border-bottom: 1px solid var(--border);
+  }
+  .sign-group:last-child { border-bottom: none; }
+  .sign-toggle {
+    width: 100%;
+    background: white;
+    border: none;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s;
+  }
+  .sign-toggle:hover { background: var(--slate-light); }
+  .sign-toggle .sign-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .icon-lang { background: #ffe4e4; color: var(--red); }
+  .icon-beh { background: #fff3e0; color: #e65100; }
+  .icon-emo { background: #e8f5e9; color: var(--green); }
+
+  .sign-toggle .toggle-title {
+    flex: 1;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--slate);
+  }
+  .sign-toggle .toggle-sub {
+    font-size: 12px;
+    color: var(--slate-mid);
+    display: block;
+    margin-top: 2px;
+    font-weight: 400;
+  }
+  .sign-toggle .toggle-arrow {
+    color: var(--slate-mid);
+    transition: transform 0.3s;
+    font-size: 14px;
+  }
+  .sign-toggle.active .toggle-arrow { transform: rotate(180deg); }
+  .sign-toggle.active { background: var(--slate-light); }
+
+  .sign-body {
+    display: none;
+    padding: 0 28px 24px;
+    background: var(--slate-light);
+  }
+  .sign-body.open { display: block; }
+  .sign-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding-top: 16px;
+  }
+  @media (max-width: 560px) {
+    .sign-list { grid-template-columns: 1fr; }
+  }
+  .sign-list li {
+    background: white;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.7;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .sign-list li i { margin-top: 3px; flex-shrink: 0; color: var(--red); font-size: 12px; }
+  .sign-list.orange li i { color: #e65100; }
+  .sign-list.green li i { color: var(--green); }
+
+  .sign-note {
+    background: var(--amber-light);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: var(--slate);
+    margin-top: 14px;
+    line-height: 1.8;
+  }
+  .sign-note strong { color: var(--amber); }
+
+  /* ===== LISTEN SECTION ===== */
+  .listen-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+  }
+  .listen-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--deep-teal);
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .listen-card h3 i { font-size: 18px; color: var(--mid-teal); }
+
+  .research-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--green-light);
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .direct-ask-box {
+    background: linear-gradient(135deg, #1a5c6e, #2a7d92);
+    color: white;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+  .direct-ask-box h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: white;
+  }
+  .direct-ask-box p { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.9; }
+  .ask-example {
+    background: rgba(255,255,255,0.15);
+    border-left: 3px solid rgba(255,255,255,0.6);
+    padding: 14px 18px;
+    margin-top: 16px;
+    border-radius: 0 10px 10px 0;
+    font-size: 14px;
+    color: white;
+    line-height: 1.8;
+  }
+  .ask-example .label { font-size: 11px; opacity: 0.7; margin-bottom: 4px; letter-spacing: 1px; display: block; }
+
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 560px) {
+    .compare-grid { grid-template-columns: 1fr; }
+  }
+  .compare-col h4 {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 16px;
+    border-radius: 8px 8px 0 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .good-col h4 { background: var(--green); color: white; }
+  .bad-col h4 { background: var(--red); color: white; }
+  .compare-items {
+    background: white;
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 12px;
+  }
+  .compare-item {
+    font-size: 13px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    line-height: 1.7;
+    display: flex; gap: 8px; align-items: flex-start;
+  }
+  .compare-item:last-child { margin-bottom: 0; }
+  .good-item { background: var(--green-light); color: var(--slate); }
+  .bad-item { background: var(--red-light); color: var(--slate); }
+  .compare-item i { margin-top: 3px; flex-shrink: 0; font-size: 12px; }
+  .good-item i { color: var(--green); }
+  .bad-item i { color: var(--red); }
+
+  .dont-promise {
+    background: var(--red-light);
+    border: 1px solid #f5c6c6;
+    border-radius: 12px;
+    padding: 20px 24px;
+    font-size: 14px;
+    color: var(--slate);
+    line-height: 1.9;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .dont-promise i { color: var(--red); font-size: 22px; margin-top: 2px; flex-shrink: 0; }
+  .dont-promise strong { color: var(--red); }
+
+  /* ===== CONNECT SECTION ===== */
+  .urgency-flow {
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .urgency-header {
+    background: var(--slate);
+    color: white;
+    padding: 18px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .urgency-levels {
+    padding: 0;
+  }
+  .urgency-item {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .urgency-item:last-child { border-bottom: none; }
+  .urgency-level {
+    width: 72px;
+    padding: 6px 0;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .lv-high { background: #ffebee; color: var(--red); border: 1px solid #ffcdd2; }
+  .lv-mid { background: #fff8e1; color: #e65100; border: 1px solid #ffe0b2; }
+  .lv-low { background: var(--green-light); color: var(--green); border: 1px solid #c8e6c9; }
+  .urgency-desc h4 { font-size: 14px; font-weight: 700; color: var(--slate); margin-bottom: 6px; }
+  .urgency-desc p { font-size: 13px; color: var(--slate-mid); line-height: 1.8; }
+  .urgency-action {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--mid-teal);
+    margin-top: 8px;
+    display: flex; align-items: center; gap: 6px;
+  }
+
+  .resource-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 560px) {
+    .resource-grid { grid-template-columns: 1fr; }
+  }
+  .resource-card {
+    background: white;
+    border-radius: 14px;
+    padding: 22px 20px;
+    box-shadow: var(--shadow);
+    border-top: 3px solid var(--mid-teal);
+  }
+  .resource-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--deep-teal);
+    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .resource-item {
+    font-size: 13px;
+    color: var(--slate);
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border);
+    line-height: 1.7;
+  }
+  .resource-item:last-child { border-bottom: none; }
+  .resource-item .hotline {
+    font-weight: 700;
+    color: var(--deep-teal);
+    display: block;
+    font-size: 15px;
+    margin-top: 2px;
+  }
+  .resource-item a {
+    color: var(--mid-teal);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .resource-item a:hover { text-decoration: underline; }
+
+  /* ===== WATCH SECTION ===== */
+  .watch-timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+  .watch-timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--mid-teal), var(--amber));
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 24px;
+  }
+  .timeline-dot {
+    position: absolute;
+    left: -27px;
+    top: 6px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--mid-teal);
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--mid-teal);
+  }
+  .timeline-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+  .timeline-card h4 { font-size: 14px; font-weight: 700; color: var(--deep-teal); margin-bottom: 8px; }
+  .timeline-card p { font-size: 13px; color: var(--slate-mid); line-height: 1.8; }
+
+  .team-box {
+    background: linear-gradient(135deg, #f0f9ff, #e8f4f8);
+    border: 1px solid #bde3ef;
+    border-radius: 14px;
+    padding: 24px;
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .team-box i { font-size: 28px; color: var(--mid-teal); flex-shrink: 0; margin-top: 2px; }
+  .team-box h4 { font-size: 15px; font-weight: 700; color: var(--deep-teal); margin-bottom: 8px; }
+  .team-box p { font-size: 13px; color: var(--slate); line-height: 1.9; }
+
+  /* ===== MYTHS ===== */
+  .myth-card {
+    background: white;
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .myth-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 22px 24px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .myth-header:hover { background: var(--slate-light); }
+  .myth-badge {
+    background: var(--red-light);
+    color: var(--red);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+    margin-top: 2px;
+    letter-spacing: 1px;
+  }
+  .myth-q {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--slate);
+    line-height: 1.7;
+  }
+  .myth-arrow {
+    color: var(--slate-mid);
+    transition: transform 0.3s;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .myth-header.active .myth-arrow { transform: rotate(180deg); }
+  .myth-body {
+    display: none;
+    padding: 0 24px 24px;
+    border-top: 1px solid var(--border);
+    background: var(--slate-light);
+  }
+  .myth-body.open { display: block; }
+  .myth-answer {
+    margin-top: 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .myth-answer .answer-badge {
+    background: var(--green);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+    letter-spacing: 1px;
+  }
+  .myth-answer p { font-size: 13px; color: var(--slate); line-height: 1.9; }
+  .myth-evidence {
+    font-size: 12px;
+    color: var(--slate-mid);
+    background: white;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 14px;
+    line-height: 1.8;
+    border-left: 3px solid var(--mid-teal);
+  }
+  .myth-evidence strong { color: var(--mid-teal); }
+
+  /* ===== SELF CARE ===== */
+  .self-care-bg {
+    background: linear-gradient(160deg, #f5f0e8, #faf7f2);
+    border-radius: 20px;
+    padding: 36px 32px;
+    border: 1px solid #e8ddd0;
+  }
+  .selfcare-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  @media (max-width: 560px) {
+    .selfcare-grid { grid-template-columns: 1fr; }
+  }
+  .selfcare-item {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .selfcare-item .sc-icon {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: var(--light-teal);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px;
+    color: var(--deep-teal);
+    font-size: 20px;
+  }
+  .selfcare-item h4 { font-size: 13px; font-weight: 700; color: var(--deep-teal); margin-bottom: 6px; }
+  .selfcare-item p { font-size: 12px; color: var(--slate-mid); line-height: 1.7; }
+
+  .burnout-warning {
+    background: var(--amber-light);
+    border: 1px solid #fad3a0;
+    border-radius: 12px;
+    padding: 20px 24px;
+    font-size: 14px;
+    color: var(--slate);
+    line-height: 1.9;
+    margin-top: 20px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .burnout-warning i { color: var(--amber); font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+
+  /* ===== CRITICAL SECTION ===== */
+  .critical-section {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 48px 24px;
+  }
+  .critical-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .critical-section .section-label { color: rgba(255,255,255,0.6); }
+  .critical-section .section-title { color: white; }
+  .critical-section .section-lead { color: rgba(255,255,255,0.8); }
+  .critical-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .critical-list li {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.9);
+    display: flex; gap: 14px; align-items: flex-start;
+    line-height: 1.8;
+  }
+  .critical-list li i { color: rgba(255,255,255,0.5); font-size: 16px; margin-top: 2px; flex-shrink: 0; }
+  .critical-list li strong { color: white; }
+
+  /* ===== SOURCES ===== */
+  .sources-section {
+    background: var(--slate);
+    color: white;
+    padding: 56px 0;
+  }
+  .sources-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .sources-inner .section-label { color: rgba(255,255,255,0.5); }
+  .sources-inner .section-title { color: white; font-size: 22px; }
+  .source-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .source-list li {
+    background: rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    line-height: 1.7;
+    transition: background 0.2s;
+  }
+  .source-list li:hover { background: rgba(255,255,255,0.12); }
+  .source-list li i { color: rgba(255,255,255,0.4); margin-top: 2px; flex-shrink: 0; }
+  .source-list a {
+    color: #7ecfe3;
+    text-decoration: none;
+  }
+  .source-list a:hover { text-decoration: underline; }
+
+  .footer-credit {
+    text-align: center;
+    padding: 24px;
+    background: #1a2535;
+    color: rgba(255,255,255,0.4);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== SCROLL INDICATOR ===== */
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--mid-teal), var(--amber));
+    width: 0%;
+    z-index: 999;
+    transition: width 0.1s;
+  }
+
+  /* ===== SECTION DIVIDERS ===== */
+  .divider-wave {
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  /* ===== THEORY GRID RESPONSIVE ===== */
+  @media (max-width: 600px) {
+    .theory-3col {
+      grid-template-columns: 1fr !important;
+    }
+    .theory-3col > div {
+      display: flex !important;
+      align-items: center !important;
+      gap: 14px !important;
+      text-align: left !important;
+      padding: 14px 16px !important;
+    }
+    .theory-3col > div > div:first-child {
+      font-size: 22px !important;
+      flex-shrink: 0;
+    }
+  }
+
+  /* ===== ANIMATIONS ===== */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== SECTION ANCHORS ===== */
+  .section-anchor {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    padding: 0 20px;
+  }
+  .anchor-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .anchor-inner::-webkit-scrollbar { display: none; }
+  .anchor-btn {
+    background: none;
+    border: none;
+    font-size: 12px;
+    color: var(--slate-mid);
+    padding: 14px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    font-family: 'Noto Sans JP', sans-serif;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .anchor-btn:hover { color: var(--deep-teal); }
+  .anchor-btn.current { color: var(--deep-teal); border-bottom-color: var(--deep-teal); font-weight: 700; }
+
+  /* Number callout */
+  .callout-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px; height: 28px;
+    background: var(--mid-teal);
+    color: white;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* Quote style */
+  .quote-block {
+    border-left: 4px solid var(--mid-teal);
+    padding: 16px 20px;
+    background: var(--light-teal);
+    border-radius: 0 12px 12px 0;
+    font-size: 14px;
+    color: var(--slate);
+    line-height: 1.9;
+    font-style: italic;
+    margin: 20px 0;
+  }
+  .quote-block cite {
+    display: block;
+    font-size: 12px;
+    color: var(--slate-mid);
+    font-style: normal;
+    margin-top: 8px;
+  }
+
+  .section-bg-white { background: white; }
+  .section-bg-teal { background: linear-gradient(160deg, #e8f4f8, #f0faf5); }
+</style>
+</head>
+<body>
+
+<!-- Progress bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="hero-badge">就労移行支援スタッフ向け研修資料</div>
+  <h1>ゲートキーパーの<br>考え方と関わり方</h1>
+  <p class="hero-sub">
+    危機のサインに気づき、話を聴き、命の橋渡しをする。<br>
+    スタッフの日常的な関わりが、誰かの「助けを求める入口」になる。
+  </p>
+  <div class="hero-def">
+    <strong>厚生労働省による定義</strong>
+    悩んでいる人に気づき、声をかけ、話を聴いて、必要な支援につなげ、見守ることができる人。特別な資格は必要なく、日常的に関わるすべての人がゲートキーパーになりうる。
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:60px;display:block;">
+      <path d="M0,0 C300,60 900,60 1200,0 L1200,60 L0,60 Z" fill="#faf7f2"/>
+    </svg>
+  </div>
+</header>
+
+<!-- ===== NAV ===== -->
+<nav class="section-anchor">
+  <div class="anchor-inner">
+    <button class="anchor-btn current" onclick="scrollToSection('context')">なぜ必要か</button>
+    <button class="anchor-btn" onclick="scrollToSection('overview')">4つの役割</button>
+    <button class="anchor-btn" onclick="scrollToSection('notice')">①気づく</button>
+    <button class="anchor-btn" onclick="scrollToSection('theory')">自殺の理論</button>
+    <button class="anchor-btn" onclick="scrollToSection('listen')">②傾聴する</button>
+    <button class="anchor-btn" onclick="scrollToSection('connect')">③つなぐ</button>
+    <button class="anchor-btn" onclick="scrollToSection('watch')">④見守る</button>
+    <button class="anchor-btn" onclick="scrollToSection('myths')">よくある誤解</button>
+    <button class="anchor-btn" onclick="scrollToSection('selfcare')">自己ケア</button>
+    <button class="anchor-btn" onclick="scrollToSection('critical')">批判的視点</button>
+  </div>
+</nav>
+
+<!-- ===== CONTEXT SECTION ===== -->
+<section class="section" id="context">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-label"><i class="fas fa-map-marker-alt"></i> &nbsp;背景と必要性</p>
+      <h2 class="section-title">なぜ就労移行支援の現場で<br>ゲートキーパーが必要か</h2>
+      <p class="section-lead">
+        就労移行支援の利用者の多くは、精神・発達障害を抱えながら就職という高ストレスの体験に挑んでいます。スタッフは「毎日顔を合わせる存在」として、変化にもっとも早く気づける立場にいます。
+      </p>
+    </div>
+
+    <div class="stat-highlight fade-up">
+      <div class="stat-number">約2<span>万人</span></div>
+      <div class="stat-text">
+        <strong>日本の年間自殺者数（警察庁統計）</strong>
+        毎年約2万人以上が自殺で亡くなっている。無職者・就労困難な状況にある人が多く含まれ、特に精神障害のある人のリスクは一般より高い。自殺はある日突然起きるのではなく、多くの場合に事前のサインがある。
+      </div>
+    </div>
+
+    <div class="context-grid fade-up">
+      <div class="context-card">
+        <div class="card-icon"><i class="fas fa-user-injured"></i></div>
+        <h3>利用者が置かれた状況</h3>
+        <p>精神・発達障害を抱えながら就職活動に取り組む。失敗・挫折・孤立のリスクが高く、心理的負荷は一般の求職者より大きくなりやすい。</p>
+      </div>
+      <div class="context-card">
+        <div class="card-icon"><i class="fas fa-eye"></i></div>
+        <h3>スタッフの特権的な立場</h3>
+        <p>毎日顔を合わせるスタッフは、家族や他の医療機関よりも「ふだんとの違い」に最初に気づける。その距離感こそが最大の強みになる。</p>
+      </div>
+      <div class="context-card">
+        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>精神障害と自殺リスク</h3>
+        <p>精神障害のある人における自殺リスクは一般人口より有意に高いことが研究で示されている。支援の場でのゲートキーパー機能は非常に重要。</p>
+      </div>
+      <div class="context-card">
+        <div class="card-icon"><i class="fas fa-door-open"></i></div>
+        <h3>「入口」としての役割</h3>
+        <p>ゲートキーパーは治療者ではない。危機に気づき、話を聴き、専門家につなぐ「最初の扉を開ける人」。完璧な対応ができなくても、関わること自体に意味がある。</p>
+      </div>
+    </div>
+
+    <div class="insight-box fade-up">
+      <strong>重要な認識：</strong>ゲートキーパーは「完璧な対応者」ではなく、「最初の窓口」です。スタッフ一人が抱えるのではなく、気づきをチームに持ち込むことが仕事のすべてです。
+    </div>
+  </div>
+</section>
+
+<!-- ===== OVERVIEW ===== -->
+<section class="section section-bg-white" id="overview">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-label"><i class="fas fa-route"></i> &nbsp;全体の構造</p>
+      <h2 class="section-title">ゲートキーパーの4つの役割</h2>
+      <p class="section-lead">厚生労働省が定めるゲートキーパーの行動指針は4段階。特別なスキルよりも、「関わり続ける意志」が核心にある。</p>
+    </div>
+
+    <div class="steps-overview fade-up">
+      <div class="steps-flow">
+        <div class="step-item s1">
+          <div class="step-connector">
+            <div class="step-num">1</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3><i class="fas fa-search" style="color:#1a5c6e;font-size:16px;"></i> 気づく <span class="step-tag tag-teal">NOTICE</span></h3>
+            <p>いつもと違う様子、言葉、行動のサインに気づくこと。変化に最初に気づけるのは、毎日接しているスタッフだからこそ。観察力と関心が鍵。</p>
+          </div>
+        </div>
+        <div class="step-item s2">
+          <div class="step-connector">
+            <div class="step-num">2</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3><i class="fas fa-comments" style="color:#2a7d92;font-size:16px;"></i> 傾聴する <span class="step-tag tag-teal">LISTEN</span></h3>
+            <p>声をかけ、批判せずに話を聴くこと。解決策を急がず、感情をそのまま受け取る。「死にたいか」を直接尋ねることも必要な場面がある。</p>
+          </div>
+        </div>
+        <div class="step-item s3">
+          <div class="step-connector">
+            <div class="step-num">3</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3><i class="fas fa-link" style="color:#2c7a52;font-size:16px;"></i> つなぐ <span class="step-tag tag-green">CONNECT</span></h3>
+            <p>適切な支援・相談機関へ橋渡しをすること。緊急度に応じて社内の上司・管理者・外部専門機関へ。一人で判断しない、一人で抱えない。</p>
+          </div>
+        </div>
+        <div class="step-item s4">
+          <div class="step-connector">
+            <div class="step-num">4</div>
+          </div>
+          <div class="step-content">
+            <h3><i class="fas fa-heart" style="color:#d97b2a;font-size:16px;"></i> 見守る <span class="step-tag tag-amber">WATCH OVER</span></h3>
+            <p>つないで終わりではなく、継続的に温かく関わること。専門家につないだ後も、日常の小さな声かけが「見捨てられていない」という安心感を生む。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block fade-up">
+      「ゲートキーパーにとって最も大切なことは、完璧な対応ではなく、関わりを持とうとする意志と姿勢そのものである」
+      <cite>— 自殺対策の基本的考え方（厚生労働省自殺対策推進室）</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NOTICE SECTION ===== -->
+<section class="section" id="notice" style="background:var(--light-teal);">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-label"><i class="fas fa-search"></i> &nbsp;ステップ 1</p>
+      <h2 class="section-title">気づく — 変化のサインを見逃さない</h2>
+      <p class="section-lead">
+        危機にある人は、言葉・行動・感情のいずれかで「助けてほしい」というサインを発していることが多い。以下の変化は、意識して観察する価値がある。
+      </p>
+    </div>
+
+    <div class="signs-section fade-up">
+      <div class="signs-header">
+        <h3><i class="fas fa-magnifying-glass" style="margin-right:10px;"></i>注意すべき変化のサイン</h3>
+        <p>各カテゴリーをクリックして詳細を確認できます</p>
+      </div>
+
+      <!-- 言語的サイン -->
+      <div class="sign-group">
+        <button class="sign-toggle active" onclick="toggleSign(this)">
+          <div class="sign-icon icon-lang"><i class="fas fa-comment-dots"></i></div>
+          <div>
+            <span class="toggle-title">言語的サイン</span>
+            <span class="toggle-sub">言葉や発言の内容・トーンの変化</span>
+          </div>
+          <i class="fas fa-chevron-down toggle-arrow"></i>
+        </button>
+        <div class="sign-body open">
+          <ul class="sign-list">
+            <li><i class="fas fa-circle"></i>「消えてしまいたい」「死にたい」という直接・間接の発言</li>
+            <li><i class="fas fa-circle"></i>「迷惑をかけてばかりで申し訳ない」「いなくなっても誰も困らない」</li>
+            <li><i class="fas fa-circle"></i>「もう限界」「疲れた」「何をやっても無駄」</li>
+            <li><i class="fas fa-circle"></i>「もうすぐ楽になる」など、死を示唆するような発言</li>
+            <li><i class="fas fa-circle"></i>「ありがとう、今まで」という唐突な感謝の言葉</li>
+            <li><i class="fas fa-circle"></i>希望・未来への言及がなくなる、話が過去形になる</li>
+          </ul>
+          <div class="sign-note">
+            <strong>ポイント：</strong>「死にたい」という言葉は注目を引くための言葉と決めつけてはいけません。すべての発言を真剣に受け取ることが、ゲートキーパーの基本姿勢です。
+          </div>
+        </div>
+      </div>
+
+      <!-- 行動的サイン -->
+      <div class="sign-group">
+        <button class="sign-toggle" onclick="toggleSign(this)">
+          <div class="sign-icon icon-beh"><i class="fas fa-person-walking"></i></div>
+          <div>
+            <span class="toggle-title">行動的サイン</span>
+            <span class="toggle-sub">行動パターン・日常生活の変化</span>
+          </div>
+          <i class="fas fa-chevron-down toggle-arrow"></i>
+        </button>
+        <div class="sign-body">
+          <ul class="sign-list orange">
+            <li><i class="fas fa-circle"></i>急な欠席・遅刻・早退の増加、連絡なしでの無断欠席</li>
+            <li><i class="fas fa-circle"></i>身なり・清潔への無関心（以前より著しく気が使われなくなる）</li>
+            <li><i class="fas fa-circle"></i>大切にしていた物を人に譲る、物の整理をする行動</li>
+            <li><i class="fas fa-circle"></i>突然の落ち着き・晴れ晴れした様子（決意後の解放感）</li>
+            <li><i class="fas fa-circle"></i>自傷の跡（腕・手首などの傷）に気づく</li>
+            <li><i class="fas fa-circle"></i>SNSで別れや死をほのめかす投稿をしている</li>
+            <li><i class="fas fa-circle"></i>アルコール・薬などへの依存的行動が見られる</li>
+            <li><i class="fas fa-circle"></i>以前楽しんでいた活動や話題への関心がなくなる</li>
+          </ul>
+          <div class="sign-note">
+            <strong>注意：</strong>「急な落ち着き」は危険なサインの一つです。長期間の苦しみの後に突然穏やかになった場合、決意が固まった可能性があります。
+          </div>
+        </div>
+      </div>
+
+      <!-- 感情的サイン -->
+      <div class="sign-group">
+        <button class="sign-toggle" onclick="toggleSign(this)">
+          <div class="sign-icon icon-emo"><i class="fas fa-face-sad-tear"></i></div>
+          <div>
+            <span class="toggle-title">感情・心理的サイン</span>
+            <span class="toggle-sub">情緒・思考パターンの変化</span>
+          </div>
+          <i class="fas fa-chevron-down toggle-arrow"></i>
+        </button>
+        <div class="sign-body">
+          <ul class="sign-list green">
+            <li><i class="fas fa-circle"></i>強い絶望感・無力感の表出（「どうにもならない」）</li>
+            <li><i class="fas fa-circle"></i>孤立感・誰にも理解されないという感覚の訴え</li>
+            <li><i class="fas fa-circle"></i>強い怒りや焦燥感、感情の急激な波</li>
+            <li><i class="fas fa-circle"></i>自己否定的な発言が増える（「自分はダメだ」）</li>
+            <li><i class="fas fa-circle"></i>集中力の著しい低下、ぼんやりしている時間が増える</li>
+            <li><i class="fas fa-circle"></i>感情が平坦になる（喜怒哀楽の表現がなくなる）</li>
+          </ul>
+          <div class="sign-note">
+            <strong>重要：</strong>一つのサインで判断するのではなく、複数のサインが重なっていないか、また「以前との違い」という変化を基準にして観察することが重要です。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== JOINER THEORY SECTION ===== -->
+<section class="section section-bg-white" id="theory">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-label"><i class="fas fa-brain"></i> &nbsp;理論的背景</p>
+      <h2 class="section-title">なぜ人は自殺を考えるのか<br><span style="font-size:0.7em;font-weight:400;color:var(--slate-mid);">— ジョイナーの自殺の対人関係理論（IPTS）</span></h2>
+      <p class="section-lead">
+        「なぜそこまで追い詰められたのか」を理解する枠組みを持つことで、スタッフはサインの意味をより深く読み取れるようになります。現在、自殺研究で最も広く参照されている理論のひとつを紹介します。
+      </p>
+    </div>
+
+    <!-- 理論の概要ボックス -->
+    <div style="background:linear-gradient(135deg,#0d3d4a,#1a5c6e);border-radius:20px;padding:32px;margin-bottom:28px;color:white;" class="fade-up">
+      <div style="font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.6);margin-bottom:12px;font-weight:700;">THOMAS E. JOINER, 2005 / Van Orden et al., 2010</div>
+      <h3 style="font-family:'Noto Serif JP',serif;font-size:20px;margin-bottom:14px;line-height:1.5;">自殺への移行は「3つの条件の重なり」で説明できる</h3>
+      <p style="font-size:14px;color:rgba(255,255,255,0.85);line-height:1.9;margin-bottom:20px;">
+        ジョイナーは、自殺念慮・自殺行動を引き起こすプロセスを3つの心理的構成概念で説明しました。<br>
+        念慮（死にたい気持ち）は最初の2つが重なったときに生じ、実際の自殺行動にはさらに3つ目の条件が加わると理論化しています。
+      </p>
+      <!-- 3要素の図 -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;" class="theory-3col">
+        <div style="background:rgba(255,255,255,0.12);border-radius:12px;padding:18px 14px;text-align:center;border:1px solid rgba(255,255,255,0.2);">
+          <div style="font-size:28px;margin-bottom:8px;">🔴</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.6);letter-spacing:1px;font-weight:700;margin-bottom:6px;">構成要素①</div>
+          <div style="font-weight:700;font-size:14px;margin-bottom:6px;">重荷感</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);line-height:1.7;">Perceived Burdensomeness</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.12);border-radius:12px;padding:18px 14px;text-align:center;border:1px solid rgba(255,255,255,0.2);">
+          <div style="font-size:28px;margin-bottom:8px;">🔵</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.6);letter-spacing:1px;font-weight:700;margin-bottom:6px;">構成要素②</div>
+          <div style="font-weight:700;font-size:14px;margin-bottom:6px;">阻害された所属感</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);line-height:1.7;">Thwarted Belongingness</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.12);border-radius:12px;padding:18px 14px;text-align:center;border:1px solid rgba(255,255,255,0.2);">
+          <div style="font-size:28px;margin-bottom:8px;">⚫</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.6);letter-spacing:1px;font-weight:700;margin-bottom:6px;">構成要素③</div>
+          <div style="font-weight:700;font-size:14px;margin-bottom:6px;">自殺潜在能力</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.75);line-height:1.7;">Acquired Capability</div>
+        </div>
+      </div>
+      <!-- 矢印フロー -->
+      <div style="background:rgba(255,255,255,0.08);border-radius:10px;padding:16px 20px;font-size:13px;color:rgba(255,255,255,0.9);line-height:1.9;text-align:center;">
+        <span style="background:rgba(255,100,100,0.3);padding:3px 10px;border-radius:6px;">重荷感</span>
+        &nbsp;＋&nbsp;
+        <span style="background:rgba(100,160,255,0.3);padding:3px 10px;border-radius:6px;">阻害された所属感</span>
+        &nbsp;＋ 絶望 →&nbsp;
+        <strong>自殺念慮</strong>
+        &nbsp;&nbsp;×&nbsp;&nbsp;
+        <span style="background:rgba(200,200,200,0.2);padding:3px 10px;border-radius:6px;">自殺潜在能力</span>
+        &nbsp;→&nbsp;
+        <strong style="color:#ffcdd2;">自殺行動</strong>
+      </div>
+    </div>
+
+    <!-- 3要素の詳細カード -->
+    <div class="fade-up" style="display:flex;flex-direction:column;gap:16px;margin-bottom:28px;">
+
+      <!-- ①重荷感 -->
+      <div style="background:white;border-radius:16px;box-shadow:var(--shadow);overflow:hidden;">
+        <div style="background:linear-gradient(135deg,#b83535,#c94040);padding:20px 24px;color:white;display:flex;align-items:center;gap:16px;">
+          <div style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <i class="fas fa-weight-hanging" style="font-size:18px;"></i>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:2px;opacity:0.8;margin-bottom:4px;font-weight:700;">構成要素 ①</div>
+            <h3 style="font-family:'Noto Serif JP',serif;font-size:19px;margin-bottom:0;">重荷感（Perceived Burdensomeness）</h3>
+          </div>
+        </div>
+        <div style="padding:24px;">
+          <p style="font-size:14px;color:var(--slate);line-height:1.9;margin-bottom:16px;">
+            「自分は周りの迷惑になっている」「自分がいなくなった方が、皆は楽になれる」という認知のこと。これは客観的事実ではなく、<strong>認知の歪み</strong>として生じます。就職活動での失敗・不採用・スタッフへの申し訳なさから、就労移行支援の利用者に生じやすい感覚です。
+          </p>
+          <div style="background:#fdeaea;border-radius:10px;padding:16px 18px;margin-bottom:12px;">
+            <div style="font-size:11px;font-weight:700;color:var(--red);letter-spacing:1px;margin-bottom:8px;">現場でよく聞かれる言葉</div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="font-size:13px;color:var(--slate);background:white;padding:8px 14px;border-radius:6px;border-left:3px solid var(--red);">「ご迷惑ばかりかけてすみません」</div>
+              <div style="font-size:13px;color:var(--slate);background:white;padding:8px 14px;border-radius:6px;border-left:3px solid var(--red);">「私がいなくなったら、みなさん楽になりますよね」</div>
+              <div style="font-size:13px;color:var(--slate);background:white;padding:8px 14px;border-radius:6px;border-left:3px solid var(--red);">「こんな自分のために時間を使わせてしまって…」</div>
+              <div style="font-size:13px;color:var(--slate);background:white;padding:8px 14px;border-radius:6px;border-left:3px solid var(--red);">「家族に心配かけてばかりで、本当に申し訳ない」</div>
+            </div>
+          </div>
+          <div style="background:var(--amber-light);border-left:3px solid var(--amber);padding:12px 16px;border-radius:0 8px 8px 0;font-size:13px;color:var(--slate);line-height:1.8;">
+            <strong style="color:var(--amber);">スタッフへの示唆：</strong>謝罪や遠慮の言葉を額面通り受け取るだけでなく、その背景に「自分は迷惑な存在だ」という感覚が潜んでいないか注目する。
+          </div>
+        </div>
+      </div>
+
+      <!-- ②阻害された所属感 -->
+      <div style="background:white;border-radius:16px;box-shadow:var(--shadow);overflow:hidden;">
+        <div style="background:linear-gradient(135deg,#1a5c6e,#2a7d92);padding:20px 24px;color:white;display:flex;align-items:center;gap:16px;">
+          <div style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <i class="fas fa-user-slash" style="font-size:18px;"></i>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:2px;opacity:0.8;margin-bottom:4px;font-weight:700;">構成要素 ②</div>
+            <h3 style="font-family:'Noto Serif JP',serif;font-size:19px;margin-bottom:0;">阻害された所属感（Thwarted Belongingness）</h3>
+          </div>
+        </div>
+        <div style="padding:24px;">
+          <p style="font-size:14px;color:var(--slate);line-height:1.9;margin-bottom:16px;">
+            「自分はどこにも属していない」「誰とも本当につながれていない」という孤立感のこと。人間には帰属欲求（どこかに属したいという根本的な動機）があり、それが慢性的に満たされないとき、この感覚が生じます。就職活動の孤独、周囲との比較、「自分だけ取り残されている」という感覚として現れることが多い。
+          </p>
+          <div style="background:var(--light-teal);border-radius:10px;padding:16px 18px;margin-bottom:12px;">
+            <div style="font-size:11px;font-weight:700;color:var(--deep-teal);letter-spacing:1px;margin-bottom:8px;">現場でよく聞かれる言葉</div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="font-size:13px;color:var(--slate);background:white;padding:8px 14px;border-radius:6px;border-left:3px solid var(--mid-teal);">「ここに来ても、誰にも理解されていない気がします」</div>
+              <div style="font-size:13px;color:var(--slate);background:white;padding:8px 14px;border-radius:6px;border-left:3px solid var(--mid-teal);">「同期の人たちはどんどん就職して、自分だけ…」</div>
+              <div style="font-size:13px;color:var(--slate);background:white;padding:8px 14px;border-radius:6px;border-left:3px solid var(--mid-teal);">「友達もいないし、どこにも居場所がない」</div>
+              <div style="font-size:13px;color:var(--slate);background:white;padding:8px 14px;border-radius:6px;border-left:3px solid var(--mid-teal);">「社会に必要とされている感じがしない」</div>
+            </div>
+          </div>
+          <div style="background:var(--amber-light);border-left:3px solid var(--amber);padding:12px 16px;border-radius:0 8px 8px 0;font-size:13px;color:var(--slate);line-height:1.8;">
+            <strong style="color:var(--amber);">スタッフへの示唆：</strong>「つながりを感じさせる」関わりそのものが保護因子になります。毎日のあいさつ、名前を呼ぶこと、「あなたのことを気にしています」と伝えることが、阻害された所属感の緩衝材になりうる。
+          </div>
+        </div>
+      </div>
+
+      <!-- ③自殺潜在能力 -->
+      <div style="background:white;border-radius:16px;box-shadow:var(--shadow);overflow:hidden;">
+        <div style="background:linear-gradient(135deg,#2d3748,#4a5568);padding:20px 24px;color:white;display:flex;align-items:center;gap:16px;">
+          <div style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <i class="fas fa-shield-halved" style="font-size:18px;"></i>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:2px;opacity:0.8;margin-bottom:4px;font-weight:700;">構成要素 ③</div>
+            <h3 style="font-family:'Noto Serif JP',serif;font-size:19px;margin-bottom:0;">自殺潜在能力（Acquired Capability for Suicide）</h3>
+          </div>
+        </div>
+        <div style="padding:24px;">
+          <p style="font-size:14px;color:var(--slate);line-height:1.9;margin-bottom:16px;">
+            人間には本来、死や痛みへの恐怖という「生物学的な自己防衛」が備わっています。ジョイナーは、この防衛機能が<strong>過去の体験を通じて低下した状態</strong>を「自殺潜在能力が高い」と表現しました。自傷の既往、事故・暴力・苦痛体験、あるいは慢性的な苦しみによって徐々に獲得されます。念慮だけでは自殺行動には至りにくく、この能力が加わることで実行のリスクが高まると理論化されています。
+          </p>
+          <div style="background:#f5f0e8;border-radius:10px;padding:16px 18px;margin-bottom:12px;">
+            <div style="font-size:11px;font-weight:700;color:#5d4037;letter-spacing:1px;margin-bottom:10px;">潜在能力を高めうる経験（例）</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+              <div style="font-size:13px;color:var(--slate);background:white;padding:10px 12px;border-radius:6px;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-circle-dot" style="color:#5d4037;font-size:10px;margin-top:4px;"></i>過去の自傷・自殺未遂の経験</div>
+              <div style="font-size:13px;color:var(--slate);background:white;padding:10px 12px;border-radius:6px;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-circle-dot" style="color:#5d4037;font-size:10px;margin-top:4px;"></i>家庭内暴力・虐待の被害</div>
+              <div style="font-size:13px;color:var(--slate);background:white;padding:10px 12px;border-radius:6px;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-circle-dot" style="color:#5d4037;font-size:10px;margin-top:4px;"></i>長期にわたる慢性的な苦痛・苦しみ</div>
+              <div style="font-size:13px;color:var(--slate);background:white;padding:10px 12px;border-radius:6px;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-circle-dot" style="color:#5d4037;font-size:10px;margin-top:4px;"></i>身近な人の自殺を経験している</div>
+              <div style="font-size:13px;color:var(--slate);background:white;padding:10px 12px;border-radius:6px;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-circle-dot" style="color:#5d4037;font-size:10px;margin-top:4px;"></i>危険な仕事・状況への繰り返しの暴露</div>
+              <div style="font-size:13px;color:var(--slate);background:white;padding:10px 12px;border-radius:6px;display:flex;gap:8px;align-items:flex-start;"><i class="fas fa-circle-dot" style="color:#5d4037;font-size:10px;margin-top:4px;"></i>薬物・アルコールへの依存（感覚の麻痺）</div>
+            </div>
+          </div>
+          <div style="background:var(--amber-light);border-left:3px solid var(--amber);padding:12px 16px;border-radius:0 8px 8px 0;font-size:13px;color:var(--slate);line-height:1.8;">
+            <strong style="color:var(--amber);">スタッフへの示唆：</strong>「過去に自傷したことがある」「以前にも同じような危機があった」という情報は、リスクアセスメントにおいて非常に重要です。これを知ることがあれば、必ず上司・管理者と共有してください。
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end 3cards -->
+
+    <!-- 絶望の役割 -->
+    <div style="background:white;border-radius:16px;box-shadow:var(--shadow);padding:24px 28px;margin-bottom:24px;" class="fade-up">
+      <h3 style="font-size:16px;font-weight:700;color:var(--deep-teal);margin-bottom:12px;display:flex;align-items:center;gap:10px;">
+        <i class="fas fa-lock" style="color:var(--slate-mid);"></i> 念慮を固定化させる「絶望」の役割
+      </h3>
+      <p style="font-size:14px;color:var(--slate);line-height:1.9;margin-bottom:14px;">
+        理論の重要な補足として、重荷感・阻害された所属感が「変わらない、変えられない」という<strong>絶望感（hopelessness）</strong>と結びついたとき、受動的な念慮（「死にたい」という気持ち）が能動的な念慮（「今すぐ死のう」）へと移行しやすくなるとされています。
+      </p>
+      <div style="background:var(--slate-light);border-radius:10px;padding:16px 18px;font-size:13px;color:var(--slate);line-height:1.9;">
+        <strong>現場で聞かれる絶望の言葉：</strong><br>
+        「もう何をやっても無駄です」「ずっとこのまま変わらないと思う」「この状況から抜け出す方法が思いつかない」
+        <br><br>
+        <strong style="color:var(--red);">注意：</strong>こうした発言が、重荷感・阻害された所属感を示す言葉と組み合わさって出てきたとき、リスクは特に高まります。
+      </div>
+    </div>
+
+    <!-- 理論のゲートキーパーへの意義 -->
+    <div style="background:linear-gradient(135deg,#eaf5ed,#f0faf5);border:1px solid #c8e6c9;border-radius:16px;padding:24px 28px;" class="fade-up">
+      <h3 style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:12px;display:flex;align-items:center;gap:10px;">
+        <i class="fas fa-lightbulb" style="color:var(--green);"></i> この理論がゲートキーパーに教えてくれること
+      </h3>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="background:white;border-radius:10px;padding:14px 16px;font-size:13px;color:var(--slate);line-height:1.8;display:flex;gap:12px;align-items:flex-start;">
+          <i class="fas fa-check-circle" style="color:var(--green);flex-shrink:0;margin-top:2px;"></i>
+          <span>「迷惑かけてすみません」は礼儀ではなく、<strong>サインかもしれない</strong>。その言葉の奥にある「重荷感」に注目する。</span>
+        </div>
+        <div style="background:white;border-radius:10px;padding:14px 16px;font-size:13px;color:var(--slate);line-height:1.8;display:flex;gap:12px;align-items:flex-start;">
+          <i class="fas fa-check-circle" style="color:var(--green);flex-shrink:0;margin-top:2px;"></i>
+          <span>毎日名前を呼んで関わることは、<strong>「所属感」を育てる保護行動</strong>です。些細に見える日常の関わりに意味がある。</span>
+        </div>
+        <div style="background:white;border-radius:10px;padding:14px 16px;font-size:13px;color:var(--slate);line-height:1.8;display:flex;gap:12px;align-items:flex-start;">
+          <i class="fas fa-check-circle" style="color:var(--green);flex-shrink:0;margin-top:2px;"></i>
+          <span>自傷歴・過去の危機・虐待経験がある利用者は、<strong>「自殺潜在能力」が高い可能性</strong>があり、念慮が行動に移るリスクが高まる。</span>
+        </div>
+        <div style="background:white;border-radius:10px;padding:14px 16px;font-size:13px;color:var(--slate);line-height:1.8;display:flex;gap:12px;align-items:flex-start;">
+          <i class="fas fa-check-circle" style="color:var(--green);flex-shrink:0;margin-top:2px;"></i>
+          <span>「最近つらい？」よりも、<strong>「居場所はありますか？」「誰かとつながれていますか？」</strong>という問いがより核心に近い。</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- エビデンスと批判的注記 -->
+    <div style="background:var(--amber-light);border:1px solid #fad3a0;border-radius:12px;padding:20px 24px;margin-top:20px;font-size:13px;color:var(--slate);line-height:1.9;" class="fade-up">
+      <strong style="color:var(--amber);display:flex;align-items:center;gap:8px;margin-bottom:8px;"><i class="fas fa-flask"></i> エビデンスの現状と限界</strong>
+      重荷感・阻害された所属感の2つは、Chu et al.（2017, <em>Psychological Bulletin</em>）による10年・多国間のメタ分析で、自殺念慮との有意な関連が繰り返し確認されています。一方、「自殺潜在能力」単独の主効果のエビデンスは比較的弱く（Robison et al., 2024, <em>Behavior Therapy</em>）、理論全体の検証はまだ発展途上です。また、この理論は主に欧米サンプルに基づいており、文化的・社会的文脈の違いへの留意も必要です。理論はあくまで「理解の補助線」として使うものであり、一人ひとりの苦しみは理論に還元できません。
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== LISTEN SECTION ===== -->
+<section class="section section-bg-white" id="listen">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-label"><i class="fas fa-comments"></i> &nbsp;ステップ 2</p>
+      <h2 class="section-title">傾聴する — 声をかけ、正しく聴く</h2>
+      <p class="section-lead">
+        「どう声をかけたらいいかわからない」という不安は多くのスタッフが感じます。しかし、「何か言わなければ」ではなく、「ただそこにいて聴く」ことが傾聴の本質です。
+      </p>
+    </div>
+
+    <div class="direct-ask-box fade-up">
+      <div class="research-badge"><i class="fas fa-flask"></i> 研究エビデンス</div>
+      <h3>「死にたいですか」と、直接聞いていい</h3>
+      <p>多くの人が「自殺について直接尋ねると、自殺を促してしまう」と心配します。しかし、これは誤解です。Gould et al.（2005, JAMA）の無作為化比較試験などの研究により、<strong style="color:white;">直接尋ねることが自殺念慮を高めるという証拠はなく</strong>、むしろ「話してもいい」という安心感を与え、苦しみを和らげることが示されています。</p>
+      <div class="ask-example">
+        <span class="label">声のかけ方の例</span>
+        「最近つらそうに見えて、気になっています。死にたいとか、消えてしまいたいという気持ちはありますか？」<br>
+        「少し話を聴かせてもらえますか」
+      </div>
+    </div>
+
+    <div class="listen-card fade-up">
+      <h3><i class="fas fa-scale-balanced"></i> 傾聴のポイント：してよいこと・避けること</h3>
+      <div class="compare-grid">
+        <div class="compare-col">
+          <h4 class="good-col"><i class="fas fa-check"></i> 効果的な関わり方</h4>
+          <div class="compare-items">
+            <div class="compare-item good-item"><i class="fas fa-check-circle"></i>「大変でしたね」「つらかったんですね」と気持ちをそのまま受け取る</div>
+            <div class="compare-item good-item"><i class="fas fa-check-circle"></i>沈黙を恐れず、静かにそばにいる</div>
+            <div class="compare-item good-item"><i class="fas fa-check-circle"></i>「どんな気持ちか、もう少し聞かせてもらえますか」と開かれた質問をする</div>
+            <div class="compare-item good-item"><i class="fas fa-check-circle"></i>「今、安全な場所にいますか」と安全確認をする</div>
+            <div class="compare-item good-item"><i class="fas fa-check-circle"></i>「一緒に考えましょう」と伝え、孤立させない</div>
+          </div>
+        </div>
+        <div class="compare-col">
+          <h4 class="bad-col"><i class="fas fa-times"></i> 逆効果になりやすい言動</h4>
+          <div class="compare-items">
+            <div class="compare-item bad-item"><i class="fas fa-times-circle"></i>「そんなことで死にたいなんて」「気持ちの持ちようだ」と否定・説教する</div>
+            <div class="compare-item bad-item"><i class="fas fa-times-circle"></i>「頑張れ」「大丈夫」「明るくいこう」と激励する</div>
+            <div class="compare-item bad-item"><i class="fas fa-times-circle"></i>「あなたには家族がいるじゃないか」と比較・説得する</div>
+            <div class="compare-item bad-item"><i class="fas fa-times-circle"></i>「なんでそんなことになったの」と原因を問い詰める</div>
+            <div class="compare-item bad-item"><i class="fas fa-times-circle"></i>すぐに解決策を提示し、助言で埋める</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dont-promise fade-up">
+      <i class="fas fa-lock"></i>
+      <div>
+        <strong>秘密を約束してはいけません</strong><br>
+        「誰にも言わないでね」と求められても、「秘密にする」と約束することは絶対に避けてください。安全に関わる情報は、チームや適切な専門家と共有する義務があります。「あなたのことを心配しているから、一緒に考えさせてほしい」と正直に伝えましょう。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONNECT SECTION ===== -->
+<section class="section" id="connect" style="background:var(--green-light);">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-label"><i class="fas fa-link"></i> &nbsp;ステップ 3</p>
+      <h2 class="section-title">つなぐ — 橋渡しのための判断と行動</h2>
+      <p class="section-lead">
+        「つなぐ」判断は、緊急度の見極めから始まります。一人で判断せず、上司・管理者への報告を優先してください。
+      </p>
+    </div>
+
+    <div class="urgency-flow fade-up">
+      <div class="urgency-header">
+        <i class="fas fa-traffic-light"></i> 緊急度の判断と対応の目安
+      </div>
+      <div class="urgency-levels">
+        <div class="urgency-item">
+          <div class="urgency-level lv-high">高・緊急</div>
+          <div class="urgency-desc">
+            <h4>具体的な手段・計画がある・自傷・「今すぐ死ぬ」</h4>
+            <p>「薬を大量に持っている」「今日やろうと思っている」など、具体的で切迫した危機状態。一人にしてはいけない。</p>
+            <div class="urgency-action"><i class="fas fa-arrow-right"></i> すぐに管理者・上司へ報告。必要であれば救急・警察への連絡も含め組織として対応。</div>
+          </div>
+        </div>
+        <div class="urgency-item">
+          <div class="urgency-level lv-mid">中・要注意</div>
+          <div class="urgency-desc">
+            <h4>死にたい気持ちはあるが、具体的計画はない</h4>
+            <p>「死にたいとは思うが、まだどうするかは決めていない」という状態。今すぐの危機ではないが、継続的なモニタリングが必要。</p>
+            <div class="urgency-action"><i class="fas fa-arrow-right"></i> 本日中に上司・管理者に報告し、精神科・支援機関への早期つなぎを検討。</div>
+          </div>
+        </div>
+        <div class="urgency-item">
+          <div class="urgency-level lv-low">低・経過観察</div>
+          <div class="urgency-desc">
+            <h4>「消えたい」「疲れた」など曖昧なサイン</h4>
+            <p>直接的な死の言及はないが、複数の懸念サインがある状態。今後悪化する可能性を念頭に置く。</p>
+            <div class="urgency-action"><i class="fas fa-arrow-right"></i> 引き続き関わりながら観察。チームで情報共有し、変化があれば速やかに報告。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="resource-grid fade-up">
+      <div class="resource-card">
+        <h4><i class="fas fa-building"></i> 施設内リソース</h4>
+        <div class="resource-item">管理者・施設長（まず最初に）<br><span style="font-size:12px;color:var(--slate-mid);">判断・意思決定の権限を持つ</span></div>
+        <div class="resource-item">精神保健福祉士・社会福祉士<br><span style="font-size:12px;color:var(--slate-mid);">専門的見立てとつなぎのサポート</span></div>
+        <div class="resource-item">サービス管理責任者<br><span style="font-size:12px;color:var(--slate-mid);">支援計画の調整と関係機関との連携</span></div>
+      </div>
+      <div class="resource-card">
+        <h4><i class="fas fa-hospital"></i> 医療機関</h4>
+        <div class="resource-item">かかりつけの精神科・心療内科<br><span style="font-size:12px;color:var(--slate-mid);">すでに通院中なら主治医への連絡</span></div>
+        <div class="resource-item">精神科救急・救急外来<br><span style="font-size:12px;color:var(--slate-mid);">緊急時・夜間の対応先</span></div>
+        <div class="resource-item">保健所・精神保健福祉センター<br><span style="font-size:12px;color:var(--slate-mid);">相談・受診コーディネート</span></div>
+      </div>
+      <div class="resource-card">
+        <h4><i class="fas fa-phone"></i> 相談窓口（電話）</h4>
+        <div class="resource-item">よりそいホットライン<br><span class="hotline">0120-279-338</span>（24時間・無料）</div>
+        <div class="resource-item">いのちの電話<br><span class="hotline">0120-783-556</span>（毎日16〜21時、毎月10日8時〜翌8時）</div>
+        <div class="resource-item">こころの健康相談統一ダイヤル<br><span class="hotline">0570-064-556</span><br><span style="font-size:11px;color:var(--slate-mid);">※受付時間は都道府県により異なります</span></div>
+      </div>
+      <div class="resource-card">
+        <h4><i class="fas fa-message"></i> テキスト相談</h4>
+        <div class="resource-item"><a href="https://comarigoto.jp/" target="_blank">よりそいホットライン（チャット）<i class="fas fa-external-link-alt" style="font-size:10px;margin-left:4px;"></i></a></div>
+        <div class="resource-item"><a href="https://www.mhlw.go.jp/mamorouyokokoro/soudan/sns/" target="_blank">SNS相談窓口一覧（厚労省）<i class="fas fa-external-link-alt" style="font-size:10px;margin-left:4px;"></i></a></div>
+        <div class="resource-item">文字でのやり取りを好む方に<br><span style="font-size:12px;color:var(--slate-mid);">発達・精神障害のある方に適することも</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WATCH SECTION ===== -->
+<section class="section section-bg-white" id="watch">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-label"><i class="fas fa-heart"></i> &nbsp;ステップ 4</p>
+      <h2 class="section-title">見守る — つないだ後が本当のスタート</h2>
+      <p class="section-lead">
+        専門家につないだら「終わり」ではありません。その後の日常的な関わりが、「見捨てられていない」「ここに居場所がある」という感覚を育てます。
+      </p>
+    </div>
+
+    <div class="watch-timeline fade-up">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h4><i class="fas fa-clock" style="color:var(--mid-teal);margin-right:8px;"></i>つないだ直後（48時間以内）</h4>
+          <p>「ちゃんとつながれたか」「どうだったか」を自然な形で確認する。「先生とちゃんと話せましたか」という一声が、大きな安心につながる。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:var(--amber);box-shadow:0 0 0 2px var(--amber);"></div>
+        <div class="timeline-card">
+          <h4><i class="fas fa-calendar-check" style="color:var(--amber);margin-right:8px;"></i>その後の日常的な関わり</h4>
+          <p>特別扱いするのではなく、「いつも通り関わる」ことが重要。おはようの挨拶、小さな変化への気づき、「最近どう？」という一言。日常の中に見守りを埋め込む。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:var(--green);box-shadow:0 0 0 2px var(--green);"></div>
+        <div class="timeline-card">
+          <h4><i class="fas fa-users" style="color:var(--green);margin-right:8px;"></i>チームでの情報共有と記録</h4>
+          <p>一人のスタッフだけが知っている状態を避ける。チームで共有することで、スタッフの休日中も継続的な見守りが可能になる。記録は事実を簡潔に残す。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:var(--red);box-shadow:0 0 0 2px var(--red);"></div>
+        <div class="timeline-card">
+          <h4><i class="fas fa-triangle-exclamation" style="color:var(--red);margin-right:8px;"></i>再燃サインへの注意</h4>
+          <p>危機が一度収まっても、再び悪化することがある。特に記念日・就職活動の節目・不合格通知後などのタイミングは要注意。変化があればすぐに上司に報告。</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 次の約束・安全計画 -->
+    <div class="fade-up" style="background:white;border-radius:16px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:20px;">
+      <div style="background:linear-gradient(135deg,#2c7a52,#3a9466);padding:20px 24px;color:white;display:flex;align-items:center;gap:14px;">
+        <div style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <i class="fas fa-calendar-check" style="font-size:18px;"></i>
+        </div>
+        <div>
+          <div style="font-size:11px;letter-spacing:2px;opacity:0.8;margin-bottom:4px;font-weight:700;">安全計画の要素</div>
+          <h3 style="font-family:'Noto Serif JP',serif;font-size:18px;margin:0;">「次の約束」は有効な関わりのひとつ</h3>
+        </div>
+      </div>
+      <div style="padding:24px;">
+        <p style="font-size:14px;color:var(--slate);line-height:1.9;margin-bottom:18px;">
+          Stanley &amp; Brown（2012）が開発した<strong>安全計画介入（Safety Planning Intervention）</strong>では、次の接触を具体的に設定することが、再企図リスクの低減と関連することが示されています。「次の約束をする」という行為には、2つの働きがあります。
+        </p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;">
+          <div style="background:var(--green-light);border-radius:10px;padding:16px;border-left:3px solid var(--green);">
+            <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:8px;"><i class="fas fa-link" style="margin-right:6px;"></i>所属感へのはたらき</div>
+            <p style="font-size:13px;color:var(--slate);line-height:1.8;margin:0;">「あなたのことを気にしている人がここにいる」という実感を与える。ジョイナーの理論でいう「阻害された所属感」への直接的な介入になる。</p>
+          </div>
+          <div style="background:var(--light-teal);border-radius:10px;padding:16px;border-left:3px solid var(--mid-teal);">
+            <div style="font-size:12px;font-weight:700;color:var(--deep-teal);margin-bottom:8px;"><i class="fas fa-stopwatch" style="margin-right:6px;"></i>衝動の抑止</div>
+            <p style="font-size:13px;color:var(--slate);line-height:1.8;margin:0;">「その日まで」という短期的な生きる理由づけになり、衝動的な行動を踏みとどまらせる緩衝材になりうる。</p>
+          </div>
+        </div>
+
+        <div style="background:var(--slate-light);border-radius:10px;padding:18px 20px;margin-bottom:16px;">
+          <div style="font-size:12px;font-weight:700;color:var(--slate);margin-bottom:12px;letter-spacing:1px;">伝え方の例</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:white;border-radius:8px;padding:12px 16px;font-size:13px;color:var(--slate);line-height:1.8;border-left:3px solid var(--green);">
+              <i class="fas fa-check" style="color:var(--green);margin-right:8px;"></i>「○○さんのことが心配なので、明日また少し話しましょう」
+            </div>
+            <div style="background:white;border-radius:8px;padding:12px 16px;font-size:13px;color:var(--slate);line-height:1.8;border-left:3px solid var(--green);">
+              <i class="fas fa-check" style="color:var(--green);margin-right:8px;"></i>「次に来たとき、続きを聞かせてください。待っています」
+            </div>
+            <div style="background:white;border-radius:8px;padding:12px 16px;font-size:13px;color:var(--slate);line-height:1.8;border-left:3px solid var(--red);">
+              <i class="fas fa-times" style="color:var(--red);margin-right:8px;"></i>「また来週ね」（関係性のない、事務的な流れだけの約束）
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--amber-light);border-left:3px solid var(--amber);padding:14px 18px;border-radius:0 10px 10px 0;font-size:13px;color:var(--slate);line-height:1.9;">
+          <strong style="color:var(--amber);">重要：</strong>次の約束はあくまで「見守りの一手段」です。危機対応の完結ではありません。管理者への報告・専門家へのつなぎと必ずセットで使ってください。また、<strong>実際の対応はキズキの対応マニュアルに沿って</strong>行ってください。
+        </div>
+
+        <div style="margin-top:14px;background:#f8f5f0;border-radius:10px;padding:14px 16px;font-size:12px;color:var(--slate-mid);line-height:1.8;">
+          <strong>根拠：</strong>Stanley B &amp; Brown GK (2012). "Safety Planning Intervention: A Brief Intervention to Mitigate Suicide Risk." <em>Cognitive and Behavioral Practice, 19</em>(2), 256–263.
+        </div>
+      </div>
+    </div>
+
+    <div class="team-box fade-up">
+      <i class="fas fa-people-group"></i>
+      <div>
+        <h4>ゲートキーパーは「個人」の仕事ではなくチームの仕事</h4>
+        <p>一人のスタッフが「私が守らなければ」と抱え込むことは、スタッフ自身のバーンアウトを招くリスクがあります。気づきを持ち込む・情報を共有する・役割を分担する——これがチームアプローチの本質であり、利用者にとってもより安全な環境になります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MYTHS SECTION ===== -->
+<section class="section" id="myths" style="background:#f8f5f0;">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-label"><i class="fas fa-magnifying-glass"></i> &nbsp;科学的検証</p>
+      <h2 class="section-title">よくある「誤解」を<br>エビデンスで解く</h2>
+      <p class="section-lead">
+        自殺・危機介入に関する誤解は、適切な対応を妨げます。根拠のある知識を持つことが、ゲートキーパーとしての第一歩です。
+      </p>
+    </div>
+
+    <div class="fade-up">
+
+    <div class="myth-card">
+      <div class="myth-header" onclick="toggleMyth(this)">
+        <span class="myth-badge">誤解 1</span>
+        <span class="myth-q">「自殺について直接聞くと、その考えを植え付けてしまう」</span>
+        <i class="fas fa-chevron-down myth-arrow"></i>
+      </div>
+      <div class="myth-body open">
+        <div class="myth-answer">
+          <span class="answer-badge">事実</span>
+          <p>研究エビデンスはこの信念を支持していません。「死にたいですか」と直接尋ねることで自殺念慮が高まるというデータは確認されていない一方、直接尋ねることが相手に安心感を与え、苦しみを和らげる可能性が示されています。</p>
+        </div>
+        <div class="myth-evidence">
+          <strong>根拠：</strong>Gould et al.（2005, JAMA）などの研究で、スクリーニング質問が自殺念慮を増加させないことが確認されている。WHOおよび厚生労働省の指針も直接確認を推奨している。
+        </div>
+      </div>
+    </div>
+
+    <div class="myth-card">
+      <div class="myth-header" onclick="toggleMyth(this)">
+        <span class="myth-badge">誤解 2</span>
+        <span class="myth-q">「自殺について話す人は本当に死なない。注目を引きたいだけ」</span>
+        <i class="fas fa-chevron-down myth-arrow"></i>
+      </div>
+      <div class="myth-body">
+        <div class="myth-answer">
+          <span class="answer-badge">事実</span>
+          <p>「注目目的」「脅し」と決めつけることは非常に危険です。自殺を試みた人の多くは、その前に何らかの言語的・行動的サインを発していたことが統計的に確認されています。発言の背景にある苦しみを、その形式で評価するべきではありません。</p>
+        </div>
+        <div class="myth-evidence">
+          <strong>根拠：</strong>自殺を試みた人の研究では、多くの場合に事前警告サインがあったことが確認されている（WHO, 2014; 国内外の複数の遺族・遺族調査より）。「脅し」という評価自体が、助けを求める声を無視することにつながるリスクがある。
+        </div>
+      </div>
+    </div>
+
+    <div class="myth-card">
+      <div class="myth-header" onclick="toggleMyth(this)">
+        <span class="myth-badge">誤解 3</span>
+        <span class="myth-q">「自殺は突然起こる。サインを見つけることはできない」</span>
+        <i class="fas fa-chevron-down myth-arrow"></i>
+      </div>
+      <div class="myth-body">
+        <div class="myth-answer">
+          <span class="answer-badge">事実</span>
+          <p>多くの場合、自殺行為の前には何らかの警告サインが存在します。「突然」に見えるのは、周囲がサインに気づかなかったか、気づいても適切に対応できなかったケースが多い。観察・傾聴・関わりのスキルが予防に機能する根拠はここにあります。</p>
+        </div>
+        <div class="myth-evidence">
+          <strong>根拠：</strong>自殺の多段階プロセスモデル（Joiner, 2005; O'Connor & Nock, 2014）では、自殺念慮→計画→試み のプロセスが多くの場合に段階的に進行することが示されている。
+        </div>
+      </div>
+    </div>
+
+    <div class="myth-card">
+      <div class="myth-header" onclick="toggleMyth(this)">
+        <span class="myth-badge">誤解 4</span>
+        <span class="myth-q">「危機が一度収まれば、もう安心だ」</span>
+        <i class="fas fa-chevron-down myth-arrow"></i>
+      </div>
+      <div class="myth-body">
+        <div class="myth-answer">
+          <span class="answer-badge">事実</span>
+          <p>危機の収束は「完治」ではなく、一時的な安定を意味します。過去に自殺未遂がある人は再燃リスクが統計的に高く、支援や見守りの継続が重要です。特に、ストレスイベントのタイミング（不採用通知、記念日など）は注意が必要です。</p>
+        </div>
+        <div class="myth-evidence">
+          <strong>根拠：</strong>自殺未遂歴は、将来の自殺リスクの最も強力な予測因子の一つであることが確認されている（Hawton et al., 2015）。初回の危機後も継続的なモニタリングが臨床的に推奨されている。
+        </div>
+      </div>
+    </div>
+
+    <div class="myth-card">
+      <div class="myth-header" onclick="toggleMyth(this)">
+        <span class="myth-badge">誤解 5</span>
+        <span class="myth-q">「ゲートキーパー研修を受ければ、自殺予防ができる」</span>
+        <i class="fas fa-chevron-down myth-arrow"></i>
+      </div>
+      <div class="myth-body">
+        <div class="myth-answer">
+          <span class="answer-badge">事実（批判的視点）</span>
+          <p>ゲートキーパー研修の有効性はある程度示されていますが、知識・態度の改善が、実際の自殺率の低下に直結するかについては研究によって差があります。研修は「入口」であり、組織体制・専門家との連携・スタッフへのスーパービジョンなど、構造的なサポートとセットで機能します。</p>
+        </div>
+        <div class="myth-evidence">
+          <strong>根拠：</strong>Yonemoto et al.（2019）のレビューでは、ゲートキーパー研修は知識・自信の向上に効果があるが、自殺関連行動への直接的効果のエビデンスは限定的とされている。研修単体を過信せず、組織的なバックアップが不可欠。
+        </div>
+      </div>
+    </div>
+
+    </div><!-- fade-up end -->
+  </div>
+</section>
+
+<!-- ===== SELF CARE ===== -->
+<section class="section section-bg-white" id="selfcare">
+  <div class="container">
+    <div class="fade-up">
+      <p class="section-label"><i class="fas fa-shield-heart"></i> &nbsp;スタッフ自身のために</p>
+      <h2 class="section-title">支える人が<br>支えられること</h2>
+      <p class="section-lead">
+        危機対応はスタッフ自身に強い感情的負荷をかけます。二次的トラウマ（支援者が利用者の苦しみを通じて受ける精神的衝撃）や共感疲労は、気づかないうちに蓄積します。
+      </p>
+    </div>
+
+    <div class="self-care-bg fade-up">
+      <p style="font-size:14px;color:var(--slate);line-height:1.9;margin-bottom:24px;">
+        危機対応の後、気力の低下・フラッシュバック・睡眠の変化・過敏さ・感情の麻痺などが現れたなら、それは「弱さ」ではなく、<strong>困難な仕事に真剣に向き合った証拠</strong>です。
+      </p>
+
+      <div class="selfcare-grid">
+        <div class="selfcare-item">
+          <div class="sc-icon"><i class="fas fa-comments"></i></div>
+          <h4>デブリーフィング</h4>
+          <p>危機対応の後に、チームで振り返る時間を持つ。「どう感じたか」を言葉にすることが回復の鍵。</p>
+        </div>
+        <div class="selfcare-item">
+          <div class="sc-icon"><i class="fas fa-user-tie"></i></div>
+          <h4>スーパービジョン</h4>
+          <p>管理者や外部の専門家から定期的なスーパービジョンを受けることで、判断・感情の整理ができる。</p>
+        </div>
+        <div class="selfcare-item">
+          <div class="sc-icon"><i class="fas fa-people-arrows"></i></div>
+          <h4>役割の明確化</h4>
+          <p>「スタッフのできることの限界」を組織として明確にしておくことが、一人での抱え込みを防ぐ。</p>
+        </div>
+        <div class="selfcare-item">
+          <div class="sc-icon"><i class="fas fa-circle-pause"></i></div>
+          <h4>休息の許可</h4>
+          <p>激しい対応の後は、少し距離を置くことが必要なことも。休息はプロフェッショナルの行動。</p>
+        </div>
+        <div class="selfcare-item">
+          <div class="sc-icon"><i class="fas fa-book"></i></div>
+          <h4>記録と引き継ぎ</h4>
+          <p>すべてを一人で覚えておこうとしない。記録することで、精神的な重さを分散できる。</p>
+        </div>
+        <div class="selfcare-item">
+          <div class="sc-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <h4>自分への共感</h4>
+          <p>「もっとうまくできたかも」という後悔より、「自分はできることをした」という認識を大切にする。</p>
+        </div>
+      </div>
+
+      <div class="burnout-warning">
+        <i class="fas fa-triangle-exclamation"></i>
+        <div>
+          <strong style="color:var(--amber);">バーンアウトのリスクに注意</strong><br>
+          「自分がいなければ」「もし何かあったら自分のせいだ」という過度な責任感は、スタッフ自身を追い詰めます。ゲートキーパーの役割は「つなぐ人」であり「治す人」ではありません。適切な限界の認識こそが、長く支援に携わるための基盤です。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CRITICAL SECTION ===== -->
+<section class="critical-section" id="critical">
+  <div class="critical-inner">
+    <p class="section-label">批判的視点</p>
+    <h2 class="section-title">ゲートキーパー概念を<br>批判的に見る</h2>
+    <p class="section-lead">
+      ゲートキーパー教育は有効なアプローチですが、過信・誤用を避けるために、限界と課題も正確に理解しておく必要があります。
+    </p>
+    <ul class="critical-list">
+      <li>
+        <i class="fas fa-triangle-exclamation"></i>
+        <span><strong>個人責任への過剰な帰属リスク：</strong>ゲートキーパーという概念は、スタッフ個人への過度な責任感を生む可能性があります。自殺は複合的な要因による社会的問題であり、「気づけなかった自分のせい」という帰責は正確ではなく、支援者を傷つけます。</span>
+      </li>
+      <li>
+        <i class="fas fa-triangle-exclamation"></i>
+        <span><strong>知識と行動の乖離：</strong>研修によって知識・自信は向上しますが、実際の場面での行動変容は別の問題です。研修後の実践の機会・フィードバック・継続的なスーパービジョンがなければ、研修の効果は減衰します。</span>
+      </li>
+      <li>
+        <i class="fas fa-triangle-exclamation"></i>
+        <span><strong>構造的問題への視点：</strong>個人のスキルアップだけでは限界があります。組織としての危機対応プロセス、外部機関との連携体制、スタッフへの心理的サポート体制が整備されていないと、個人のゲートキーパースキルは機能しにくい。</span>
+      </li>
+      <li>
+        <i class="fas fa-triangle-exclamation"></i>
+        <span><strong>「普及=効果」ではない：</strong>日本でゲートキーパー研修は広く実施されていますが、自殺率の低下との因果関係は複雑です。地域・職場・学校など複数の環境で包括的に取り組まれて初めて効果が生まれます。</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== SOURCES ===== -->
+<section class="sources-section" id="sources">
+  <div class="sources-inner">
+    <p class="section-label">情報ソース・参考資料</p>
+    <h2 class="section-title">参考にした情報源</h2>
+    <ul class="source-list">
+      <li>
+        <i class="fas fa-link"></i>
+        <span><strong>厚生労働省「ゲートキーパー養成研修用テキスト」</strong><br>
+        <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/jisatsu/gatekeeper_text.html" target="_blank">https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/jisatsu/gatekeeper_text.html</a></span>
+      </li>
+      <li>
+        <i class="fas fa-link"></i>
+        <span><strong>厚生労働省「自殺対策白書 令和6年版」</strong><br>
+        <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/jisatsu/jisatsuhakusyo2024.html" target="_blank">https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/jisatsu/jisatsuhakusyo2024.html</a></span>
+      </li>
+      <li>
+        <i class="fas fa-link"></i>
+        <span><strong>警察庁「令和5年中における自殺の状況」</strong><br>
+        <a href="https://www.npa.go.jp/safetylife/seianki/jisatsu/R05/R5jisatsunojoukyou.pdf" target="_blank">https://www.npa.go.jp/safetylife/seianki/jisatsu/R05/R5jisatsunojoukyou.pdf</a></span>
+      </li>
+      <li>
+        <i class="fas fa-link"></i>
+        <span><strong>自殺総合対策推進センター（JSSC）</strong><br>
+        <a href="https://jssc.ncnp.go.jp/" target="_blank">https://jssc.ncnp.go.jp/</a></span>
+      </li>
+      <li>
+        <i class="fas fa-link"></i>
+        <span><strong>Gould MS, et al. (2005). "Evaluating iatrogenic risk of youth suicide screening programs." JAMA, 293(13), 1635–1643.</strong><br>
+        自殺スクリーニングの医原性リスクを否定した研究</span>
+      </li>
+      <li>
+        <i class="fas fa-link"></i>
+        <span><strong>Yonemoto N, et al. (2019). "Gatekeeper training for suicide prevention in Japan." Cochrane Database of Systematic Reviews.</strong><br>
+        <a href="https://doi.org/10.1002/14651858.CD013217" target="_blank">https://doi.org/10.1002/14651858.CD013217</a></span>
+      </li>
+      <li>
+        <i class="fas fa-link"></i>
+        <span><strong>Hawton K, et al. (2015). "Risk factors for suicide in individuals with depression: A systematic review." Journal of Affective Disorders, 147(1-3), 17-28.</strong><br>
+        自殺未遂歴と再燃リスクについての系統的レビュー</span>
+      </li>
+      <li>
+        <i class="fas fa-link"></i>
+        <span><strong>よりそいホットライン</strong><br>
+        <a href="https://comarigoto.jp/" target="_blank">https://comarigoto.jp/</a></span>
+      </li>
+      <li>
+        <i class="fas fa-link"></i>
+        <span><strong>Stanley B & Brown GK (2012). "Safety Planning Intervention: A Brief Intervention to Mitigate Suicide Risk." Cognitive and Behavioral Practice, 19(2), 256–263.</strong><br>
+        <a href="https://doi.org/10.1016/j.cbpra.2011.01.001" target="_blank">https://doi.org/10.1016/j.cbpra.2011.01.001</a></span>
+      </li>
+      <li>
+        <i class="fas fa-link"></i>
+        <span><strong>Chu C, et al. (2017). "The interpersonal theory of suicide: A systematic review and meta-analysis of a decade of cross-national research." Psychological Bulletin, 143(12), 1313–1345.</strong><br>
+        <a href="https://doi.org/10.1037/bul0000123" target="_blank">https://doi.org/10.1037/bul0000123</a></span>
+      </li>
+      <li>
+        <i class="fas fa-link"></i>
+        <span><strong>Robison M, et al. (2024). "The interpersonal theory of suicide: State of the science." Behavior Therapy, 55, 1158–1171.</strong><br>
+        <a href="https://doi.org/10.1016/j.beth.2024.04.003" target="_blank">https://doi.org/10.1016/j.beth.2024.04.003</a></span>
+      </li>
+      <li>
+        <i class="fas fa-file-alt"></i>
+        <span><strong>WHO (2014). "Preventing suicide: A global imperative."</strong><br>
+        <a href="https://www.who.int/publications/i/item/9789241564779" target="_blank">https://www.who.int/publications/i/item/9789241564779</a></span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer class="footer-credit">
+  作成：岡村雄一郎｜就労移行支援スタッフ向け教育資料
+</footer>
+
+<script>
+// Progress bar
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / docHeight) * 100;
+  document.getElementById('progressBar').style.width = progress + '%';
+});
+
+// Scroll to section
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    const offset = el.getBoundingClientRect().top + window.scrollY - 60;
+    window.scrollTo({ top: offset, behavior: 'smooth' }); // native scrollTo ok here
+  }
+}
+
+// Fade-up animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(el => {
+    if (el.isIntersecting) {
+      el.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Sign toggles
+function toggleSign(btn) {
+  const body = btn.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  btn.classList.toggle('active', !isOpen);
+}
+
+// Myth toggles
+function toggleMyth(header) {
+  const body = header.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  header.classList.toggle('active', !isOpen);
+}
+
+// Active nav highlight
+const sections = ['context','overview','notice','theory','listen','connect','watch','myths','selfcare','critical'];
+const navBtns = document.querySelectorAll('.anchor-btn');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top < 140) {
+      current = id;
+    }
+  });
+  navBtns.forEach((btn, i) => {
+    btn.classList.toggle('current', sections[i] === current || (current === '' && i === 0));
+  });
+});
+
+// Open first myth by default
+document.querySelector('.myth-body').classList.add('open');
+document.querySelector('.myth-header').classList.add('active');
+</script>
+</body>
+</html>
